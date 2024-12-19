@@ -158,6 +158,11 @@ x = redcap_genomatrix.affected.concordance %>%
 x = redcap_genomatrix.affected.concordance %>%
   filter(in_genomatrix == 1) %>%
   filter(geneticGroupClass_newGroupClassRedcap_matches == 0)
+# Looking at just WGS samples (16 of them)
+x = redcap_genomatrix.affected.concordance %>%
+  filter(in_genomatrix == 1) %>%
+  filter(geneticGroupClass_newGroupClassRedcap_matches == 0) %>%
+  filter(genetic_data_type == "WGS")
 # 20 observations
 x = redcap_genomatrix.affected.concordance %>%
   filter(in_genomatrix == 1) %>%
